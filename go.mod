@@ -1,5 +1,6 @@
 module github.com/denverquane/amongusdiscord
 
+// +heroku goVersion go1.15
 go 1.13
 
 require (
