@@ -84,10 +84,9 @@ func discordMainWrapper() error {
 		numShards = 1
 	}
 	ports := make([]string, numShards)
-	tempPort := strings.ReplaceAll(os.Getenv("HPORT"), " ", "")
-	tempPort2 := strings.ReplaceAll(os.Getenv("PORT"), " ", "")
-	log.Printf("the port var is still incorrectly importing from heroku: %s\n", tempPort2)
-	portStrings := strings.Split(tempPort, ",")
+	tempPort := strings.ReplaceAll(os.Getenv("PORT"), " ", "")
+	additionalPorts := strings.ReplaceAll(os.Getenv("EXTRA_PORTS"), " ", "")
+	portStrings := append(strings.Split(tempPort, ","), strings.Split(tempPort, ","))
 	if len(ports) == 0 || len(tempPort) == 0 {
 		num, err := strconv.Atoi(tempPort)
 
