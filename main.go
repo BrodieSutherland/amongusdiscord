@@ -86,7 +86,7 @@ func discordMainWrapper() error {
 	ports := make([]string, numShards)
 	tempPort := strings.ReplaceAll(os.Getenv("PORT"), " ", "")
 	additionalPorts := strings.ReplaceAll(os.Getenv("EXTRA_PORTS"), " ", "")
-	portStrings := append(strings.Split(tempPort, ","), strings.Split(tempPort, ","))
+	portStrings := append(strings.Split(tempPort, ","), strings.Split(additionalPorts, ",")...)
 	if len(ports) == 0 || len(tempPort) == 0 {
 		num, err := strconv.Atoi(tempPort)
 
