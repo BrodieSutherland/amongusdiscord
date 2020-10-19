@@ -86,6 +86,7 @@ func discordMainWrapper() error {
 	ports := make([]string, numShards)
 	tempPort := strings.ReplaceAll(os.Getenv("PORT"), " ", "")
 	portStrings := strings.Split(tempPort, ",")
+	log.Printf("[Info] #of ports: %s\n", tempPort)
 	log.Printf("[Info] #of ports: %s\n", len(portStrings))
 	log.Printf("[Info] #of shards: %s\n", numShardsStr)
 	log.Printf("[Info] #of shards: %s\n", numShards)
