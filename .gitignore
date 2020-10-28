@@ -33,3 +33,6 @@ logs.txt
 temp.png
 discuss.png
 ending.png
+
+#docker env var file
+list.env
